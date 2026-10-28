@@ -150,7 +150,7 @@ def main(page: ft.Page):
                 ft.Row(
                     controls=[
                         ft.Image(
-                            src="Demo Pizzeria.svg",
+                            src="pizzeria-logo.svg",
                             width=100,
                             height=100,
                             tooltip="Logo da Pizzaria do Carlos",
