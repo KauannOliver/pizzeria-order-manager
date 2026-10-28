@@ -131,7 +131,8 @@ def mensagem_cancelar_pedido(nome_cliente, codigo_pedido):
 
 def enviar_mensagem_whatsapp(numero, mensagem):
     options = webdriver.FirefoxOptions()
-    options.profile = r"C:\Users\kauantavares\AppData\Roaming\Mozilla\Firefox\Profiles\oxbcyzri.default-release"  # Certifique-se de que este é o caminho correto
+    if os.environ.get("FIREFOX_PROFILE_DIR"):
+        options.profile = os.environ["FIREFOX_PROFILE_DIR"]
     navegador = webdriver.Firefox(options=options)
     navegador.get("https://web.whatsapp.com/")
     wait = WebDriverWait(navegador, 60)
